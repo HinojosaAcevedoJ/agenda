@@ -3,9 +3,8 @@ import ContactForm from './components/ContactForm'
 import ContactList from './components/ContactList'
 
 export default function Contacts() {
-  console.log('Estas aquí')
   return (
-    <div className="flex">
+    <div className="flex h-14">
       <ContactContextProvider>
         <ContactForm />
         <ContactList />

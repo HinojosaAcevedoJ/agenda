@@ -30,7 +30,7 @@ export default function Login() {
   }, [isAuth, navigate])
 
   return (
-    <div className="p-4 shadow rounded m-6 bg-gray-100">
+    <div className="p-4 shadow rounded m-6 bg-gray-100 relative md:absolute right-1/3 top-1/4 ">
       <h1 className="text-2xl font-bold mb-2">Login</h1>
       <form className="space-y-4" onSubmit={handleSubmit(login)}>
         <HookInput

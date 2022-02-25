@@ -47,7 +47,7 @@ function ContactForm() {
   }, [isAuth, navigate])
 
   return (
-    <div className="p-4 shadow rounded m-6 bg-gray-100">
+    <div className="p-4 shadow rounded m-6 bg-gray-100 ">
       <h1 className="text-2xl font-bold mb-2">{isUpdating ? 'Actualizando' : 'Crear'} Contacto</h1>
       <form className="space-y-4" onSubmit={handleSubmit(isUpdating ? handleUpdateContact : handleCreateContact)}>
         <HookInput

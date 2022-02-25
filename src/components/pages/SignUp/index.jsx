@@ -2,7 +2,7 @@ import { isEmpty } from 'ramda'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { toast } from 'react-toastify'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import HookInput from '../../common/HookInput'
 import Button from '../../common/Button'
 import validationSchema from './validationSchema'
@@ -34,7 +34,7 @@ export default function SignUp() {
   }
 
   return (
-    <div className="p-4 shadow rounded m-6 bg-gray-100">
+    <div className="p-4 shadow rounded m-6 bg-gray-100 relative md:absolute right-1/3 top-1/4 ">
       <h1 className="text-2xl font-bold mb-2">Sign Up</h1>
       <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
         <HookInput
@@ -61,6 +61,7 @@ export default function SignUp() {
           errorMessage={errors.passwordConfirmation?.message}
         />
         <Button block className="mr-2" type="submit" disabled={!isEmpty(errors)}>SignUp</Button>
+        <Link to="/login">¿Ya tienes cuenta? Haz click aquí para iniciar sesión</Link>
       </form>
     </div>
   )
