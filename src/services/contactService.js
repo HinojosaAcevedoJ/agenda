@@ -1,8 +1,9 @@
 import axios from 'axios'
+import { API_URL } from '../config/constants'
 
 const getClient = token => (
   axios.create({
-    baseURL: 'http://localhost:4000/persons',
+    baseURL: `${API_URL}/persons`,
     headers: { Authorization: token ? `Bearer ${token}` : undefined }
   })
 )
