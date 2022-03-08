@@ -9,8 +9,12 @@ export default function Contacts() {
   return (
     <section className="bg-indigo-600">
       <div className="grid grid-cols-2">
-        <h1 className="text-2xl font-bold mb-3 flex justify-center">Agenda</h1>
-        <Button block className="mr-2 h-10 w-20" type="button" onClick={logout}>logout</Button>
+        <div className="flex justify-center">
+          <h1 className="text-2xl font-bold mb-3">Agenda</h1>
+        </div>
+        <div className="flex justify-end">
+          <Button block className="mr-2 h-10 w-20" type="button" onClick={logout}>logout</Button>
+        </div>
       </div>
       <div className="flex">
         <ContactContextProvider>

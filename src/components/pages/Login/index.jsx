@@ -14,9 +14,6 @@ export default function Login() {
     handleSubmit,
     formState: { errors }
   } = useForm({
-    defaultValues: {
-      email: 'ejemplo@ejemplo.com'
-    },
     resolver: yupResolver(validationSchema)
   })
 
