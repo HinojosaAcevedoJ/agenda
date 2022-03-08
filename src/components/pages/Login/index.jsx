@@ -30,27 +30,29 @@ export default function Login() {
   }, [isAuth, navigate])
 
   return (
-    <div className="p-4 shadow rounded m-6 bg-gray-100 relative md:absolute right-1/3 top-1/4 ">
-      <h1 className="text-2xl font-bold mb-2">Login</h1>
-      <form className="space-y-4" onSubmit={handleSubmit(login)}>
-        <HookInput
-          name="email"
-          label="Email"
-          placeholder="Email"
-          register={register}
-          errorMessage={errors.email?.message}
-        />
-        <HookInput
-          name="password"
-          label="Password"
-          placeholder="Contraseña"
-          type="password"
-          register={register}
-          errorMessage={errors.password?.message}
-        />
-        <Button block className="mr-2" type="submit" disabled={!isEmpty(errors)}>Login</Button>
-        <Link to="/signup">No tienes cuenta? Haz click aquí para registrarte</Link>
-      </form>
+    <div className="min-h-screen min-w-screen bg-slate-100 flex items-center justify-center">
+      <div className="p-4 shadow rounded m-6 bg-gray-200">
+        <h1 className="text-2xl font-bold mb-2">Login</h1>
+        <form className="space-y-4" onSubmit={handleSubmit(login)}>
+          <HookInput
+            name="email"
+            label="Email"
+            placeholder="Email"
+            register={register}
+            errorMessage={errors.email?.message}
+          />
+          <HookInput
+            name="password"
+            label="Password"
+            placeholder="Contraseña"
+            type="password"
+            register={register}
+            errorMessage={errors.password?.message}
+          />
+          <Button block className="mr-2" type="submit" disabled={!isEmpty(errors)}>Login</Button>
+          <Link to="/signup">No tienes cuenta? Haz click aquí para registrarte</Link>
+        </form>
+      </div>
     </div>
   )
 }

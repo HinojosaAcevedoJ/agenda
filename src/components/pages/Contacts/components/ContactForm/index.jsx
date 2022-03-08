@@ -20,7 +20,7 @@ function ContactForm() {
     handleCancelUpdate
   } = useContacts()
 
-  const { logout, isAuth } = useAuth()
+  const { isAuth } = useAuth()
 
   const {
     register,
@@ -47,7 +47,7 @@ function ContactForm() {
   }, [isAuth, navigate])
 
   return (
-    <div className="p-4 shadow rounded m-6 bg-gray-100 ">
+    <div className="p-4 h-screen shadow rounded m-6 bg-blue-900">
       <h1 className="text-2xl font-bold mb-2">{isUpdating ? 'Actualizando' : 'Crear'} Contacto</h1>
       <form className="space-y-4" onSubmit={handleSubmit(isUpdating ? handleUpdateContact : handleCreateContact)}>
         <HookInput
@@ -95,7 +95,6 @@ function ContactForm() {
         />
         <Button block className="mr-2" type="submit" disabled={!isEmpty(errors)}>Submit</Button>
         <Button block className="mr-2" type="button" onClick={handleCancelUpdate}>Cancel</Button>
-        <Button block className="mr-2" type="button" onClick={logout}>logout</Button>
       </form>
     </div>
   )

@@ -57,10 +57,10 @@ export function ContactContextProvider({ children }) {
     setContactList(prev => [
       ...prev.sort((a, b) => {
         if (a.firstName < b.firstName) {
-          return 1
+          return -1
         }
         if (a.firstName > b.firstName) {
-          return -1
+          return 1
         }
         return 0
       })
