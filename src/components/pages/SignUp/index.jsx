@@ -17,9 +17,6 @@ export default function SignUp() {
     handleSubmit,
     formState: { errors }
   } = useForm({
-    defaultValues: {
-      email: 'ejemplo@ejemplo.com'
-    },
     resolver: yupResolver(validationSchema)
   })
 
@@ -34,35 +31,37 @@ export default function SignUp() {
   }
 
   return (
-    <div className="p-4 shadow rounded m-6 bg-gray-100 relative md:absolute right-1/3 top-1/4 ">
-      <h1 className="text-2xl font-bold mb-2">Sign Up</h1>
-      <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
-        <HookInput
-          name="email"
-          label="Email"
-          placeholder="Email"
-          register={register}
-          errorMessage={errors.email?.message}
-        />
-        <HookInput
-          name="password"
-          label="Password"
-          placeholder="Contraseña"
-          type="password"
-          register={register}
-          errorMessage={errors.password?.message}
-        />
-        <HookInput
-          name="passwordConfirmation"
-          label="confirmPassword"
-          placeholder="Confirmar contraseña"
-          type="password"
-          register={register}
-          errorMessage={errors.passwordConfirmation?.message}
-        />
-        <Button block className="mr-2" type="submit" disabled={!isEmpty(errors)}>SignUp</Button>
-        <Link to="/login">¿Ya tienes cuenta? Haz click aquí para iniciar sesión</Link>
-      </form>
+    <div className="min-h-screen min-w-screen bg-indigo-500 flex items-center justify-center">
+      <div className="p-4 shadow rounded m-6 bg-blue-600">
+        <h1 className="text-2xl font-bold mb-2">Sign Up</h1>
+        <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
+          <HookInput
+            name="email"
+            label="Email"
+            placeholder="Email"
+            register={register}
+            errorMessage={errors.email?.message}
+          />
+          <HookInput
+            name="password"
+            label="Password"
+            placeholder="Contraseña"
+            type="password"
+            register={register}
+            errorMessage={errors.password?.message}
+          />
+          <HookInput
+            name="passwordConfirmation"
+            label="confirmPassword"
+            placeholder="Confirmar contraseña"
+            type="password"
+            register={register}
+            errorMessage={errors.passwordConfirmation?.message}
+          />
+          <Button block className="mr-2" type="submit" disabled={!isEmpty(errors)}>SignUp</Button>
+          <Link to="/login" className="font-bold">¿Ya tienes cuenta? Haz click aquí para iniciar sesión</Link>
+        </form>
+      </div>
     </div>
   )
 }

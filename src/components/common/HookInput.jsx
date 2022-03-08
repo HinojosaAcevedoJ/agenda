@@ -14,14 +14,14 @@ export default function HookInput({
     <div className={className}>
       {label && (
         <label
-          className="block text-sm font-medium leading-5 text-gray-700"
+          className="block text-sm font-medium leading-5 text-gray-900"
           htmlFor={name}
         >
           {label}
         </label>
       )}
       <input
-        className="rounded shadow appearance-none border-gray-400 block py-1 px-2 w-full"
+        className="rounded shadow appearance-none border-gray-900 block py-1 px-2 w-full"
         placeholder={placeholder}
         type={type}
         {...register(name)}
