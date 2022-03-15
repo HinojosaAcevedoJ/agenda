@@ -27,9 +27,9 @@ export default function Login() {
   }, [isAuth, navigate])
 
   return (
-    <div className="min-h-screen min-w-screen bg-indigo-500 flex items-center justify-center">
-      <div className="p-4 shadow rounded m-6 bg-blue-600">
-        <h1 className="text-2xl font-bold mb-2">Login</h1>
+    <div className="min-h-screen min-w-screen bg-gray-900 flex items-center justify-center">
+      <div className="p-4 shadow rounded m-6 bg-gray-800">
+        <h1 className="text-2xl font-bold mb-2 text-gray-50">Login</h1>
         <form className="space-y-4" onSubmit={handleSubmit(login)}>
           <HookInput
             name="email"
@@ -47,7 +47,7 @@ export default function Login() {
             errorMessage={errors.password?.message}
           />
           <Button block className="mr-2" type="submit" disabled={!isEmpty(errors)}>Login</Button>
-          <Link to="/signup" className="font-bold">No tienes cuenta? Haz click aquí para registrarte</Link>
+          <Link to="/signup" className="font-bold text-gray-50">No tienes cuenta? Haz click aquí para registrarte</Link>
         </form>
       </div>
     </div>
